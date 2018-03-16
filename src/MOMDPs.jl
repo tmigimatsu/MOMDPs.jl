@@ -11,7 +11,7 @@ export
     part_obs_space
 
 
-abstract MOMDP <: POMDP
+abstract type MOMDP{S,A,O} <: POMDP{S,A,O} end
 
 create_fully_obs_transition(pomdp::MOMDP) = error("$(typeof(pomdp)) does not implement create_fully_obs_transition") 
 create_partially_obs_transition(pomdp::MOMDP) = error("$(typeof(pomdp)) does not implement create_part_obs_transition")   
